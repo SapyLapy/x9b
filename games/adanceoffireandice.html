@@ -1,38 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  overflow:hidden;
+  background:black;
+}
+
+/* center the game safely */
+#gameContainer {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+/* make sure it doesn't overflow screen */
+canvas {
+  max-width:100vw;
+  max-height:100vh;
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<div id="gameContainer"></div>
+
+<button onclick="goFullscreen()" 
+style="position:fixed;top:10px;right:10px;z-index:999;">
+Fullscreen
+</button>
+
+<script src="https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/UnityLoader.js"></script>
+
 <script>
 var gameInstance = UnityLoader.instantiate(
   "gameContainer",
   "https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/adofaiii4.json"
 );
 
-function fitCanvas() {
-  let canvas = document.querySelector("canvas");
-  if (!canvas || !canvas.width) return; // wait until ready
-
-  let screenW = window.innerWidth;
-  let screenH = window.innerHeight;
-
-  let gameW = canvas.width;
-  let gameH = canvas.height;
-
-  let scale = Math.min(screenW / gameW, screenH / gameH);
-
-  canvas.style.width = (gameW * scale) + "px";
-  canvas.style.height = (gameH * scale) + "px";
-
-  canvas.style.position = "absolute";
-  canvas.style.left = (screenW - gameW * scale) / 2 + "px";
-  canvas.style.top = (screenH - gameH * scale) / 2 + "px";
-}
-
-// wait a bit before starting (IMPORTANT)
-setTimeout(() => {
-  setInterval(fitCanvas, 300);
-  fitCanvas();
-}, 2000);
-
-window.addEventListener("resize", fitCanvas);
-
 function goFullscreen() {
   gameInstance.SetFullscreen(1);
 }
 </script>
+
+</body>
+</html>
