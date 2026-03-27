@@ -26,11 +26,6 @@ html, body {
 
 <div id="gameContainer"></div>
 
-<button onclick="goFullscreen()" 
-style="position:fixed;top:10px;right:10px;z-index:999;padding:8px;border-radius:8px;">
-Fullscreen
-</button>
-
 <script src="https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/UnityLoader.js"></script>
 
 <script>
@@ -49,11 +44,6 @@ function fixCanvas() {
 }
 
 setInterval(fixCanvas, 500);
-
-// fullscreen button
-function goFullscreen() {
-  gameInstance.SetFullscreen(1);
-}
 </script>
 
 </body>
