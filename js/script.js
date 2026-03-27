@@ -1,5 +1,5 @@
 const games = [
-    { title: "Bi Wrath", url: "games/biwrath.html", img: "https://via.placeholder.com/200x150?text=Bi+Wrath" }
+    { title: "A Binding Of Issac", url: "games/abindingofissac.html", img: "https://via.placeholder.com/200x150?text=A+Binding+Of+Issac" }
 ];
 
 function renderGames(gamesToRender) {
