@@ -6,7 +6,7 @@ var gameInstance = UnityLoader.instantiate(
 
 function fitCanvas() {
   let canvas = document.querySelector("canvas");
-  if (!canvas) return;
+  if (!canvas || !canvas.width) return; // wait until ready
 
   let screenW = window.innerWidth;
   let screenH = window.innerHeight;
@@ -16,18 +16,20 @@ function fitCanvas() {
 
   let scale = Math.min(screenW / gameW, screenH / gameH);
 
-  canvas.style.width = gameW * scale + "px";
-  canvas.style.height = gameH * scale + "px";
+  canvas.style.width = (gameW * scale) + "px";
+  canvas.style.height = (gameH * scale) + "px";
 
   canvas.style.position = "absolute";
   canvas.style.left = (screenW - gameW * scale) / 2 + "px";
   canvas.style.top = (screenH - gameH * scale) / 2 + "px";
 }
 
-// run constantly (Unity keeps resetting)
-setInterval(fitCanvas, 200);
+// wait a bit before starting (IMPORTANT)
+setTimeout(() => {
+  setInterval(fitCanvas, 300);
+  fitCanvas();
+}, 2000);
 
-// also update on resize
 window.addEventListener("resize", fitCanvas);
 
 function goFullscreen() {
