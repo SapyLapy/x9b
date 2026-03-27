@@ -1,5 +1,5 @@
 const games = [
-    { title: "A Binding Of Issac", url: "games/abindingofissac.html", img: "https://via.placeholder.com/200x150?text=A+Binding+Of+Issac" }
+    { title: "A Dance Of Fire And Ice", url: "games/adanceoffireandice.html", img: "https://via.placeholder.com/200x150?text=A+Dance+Of+Fire+And+Ice" }
 ];
 
 function renderGames(gamesToRender) {
