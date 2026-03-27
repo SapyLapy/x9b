@@ -1,21 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>A Binding of Isaac</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Binding of Isaac</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+        }
+        #game {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <h1>A Binding of Isaac</h1>
-    <div>
-        <h2>Instructions to set up the Ruffle emulator:</h2>
-        <p>1. Download the Ruffle emulator from the official <a href="https://ruffle.rs/">site</a>.</p>
-        <p>2. Include the Ruffle script in your HTML as follows:</p>
-        <pre>&lt;script src='path/to/ruffle.js'&gt;&lt;/script&gt;</pre>
-        <p>3. Initialize the Ruffle player in your JavaScript:</p>
-        <pre>const ruffle = window.RufflePlayer.newest();
-const player = ruffle.createPlayer();
-const gameContainer = document.getElementById('game');
-gameContainer.appendChild(player);
-player.load('path/to/your/game.swf');</pre>
-        <p>4. Make sure to replace 'path/to/your/game.swf' with the actual path to the SWF file you want to play.</p>
-    </div>
+    <div id="game"></div>
+    <script src="https://cdn.jsdelivr.net/npm/ruffle-rs@latest/dist/ruffle.js"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.RufflePlayer.config = {
+            publicPath: "https://cdn.jsdelivr.net/npm/ruffle-rs@latest/dist/"
+        };
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer(document.getElementById("game"));
+        player.load("https://cdn.jsdelivr.net/gh/RobiFet/CMinterview@a4017231eca9f2173ad7ec0e63b01e4786b4ad6b/web/src/BiWrath.swf");
+    </script>
 </body>
 </html>
