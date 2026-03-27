@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Game</title>
     <style>
-        body { margin: 0; padding: 0; background: black; }
-        canvas { display: block; }
+        body { margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-    <script src="https://ruffle.rs/demo/ruffle.js"></script>
+    <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle"></script>
     <script>
-        const ruffle = window.RufflePlayer.newest();
-        ruffle.createPlayer(document.body).load("https://cdn.jsdelivr.net/gh/RobiFet/CMinterview@a4017231eca9f2173ad7ec0e63b01e4786b4ad6b/web/src/BiWrath.swf");
+        window.RufflePlayer.newest().createPlayer(
+            document.getElementById('container')
+        ).load("https://cdn.jsdelivr.net/gh/RobiFet/CMinterview@a4017231eca9f2173ad7ec0e63b01e4786b4ad6b/web/src/BiWrath.swf");
     </script>
 </body>
 </html>
