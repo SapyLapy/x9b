@@ -13,17 +13,11 @@ html, body {
 }
 
 #gameContainer {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%) scale(1.1); /* 👈 slight upscale */
-  transform-origin:center;
-}
-
-canvas {
-  max-width:100vw;
-  max-height:100vh;
-  display:block;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 </style>
 </head>
@@ -33,7 +27,7 @@ canvas {
 <div id="gameContainer"></div>
 
 <button onclick="goFullscreen()" 
-style="position:fixed;top:10px;right:10px;z-index:999;">
+style="position:fixed;top:10px;right:10px;z-index:999;padding:8px;border-radius:8px;">
 Fullscreen
 </button>
 
@@ -45,6 +39,18 @@ var gameInstance = UnityLoader.instantiate(
   "https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/adofaiii4.json"
 );
 
+// fix oversized zoom bug
+function fixCanvas() {
+  let canvas = document.querySelector("canvas");
+  if (!canvas) return;
+
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+}
+
+setInterval(fixCanvas, 500);
+
+// fullscreen button
 function goFullscreen() {
   gameInstance.SetFullscreen(1);
 }
