@@ -12,7 +12,7 @@ html, body {
   background:black;
 }
 
-/* center wrapper */
+/* center game */
 #wrapper {
   position:absolute;
   top:50%;
@@ -21,15 +21,29 @@ html, body {
   transform-origin:center;
 }
 
-/* draggable edge */
+/* small white handle */
 #handle {
   position:absolute;
-  right:-10px;
-  top:0;
-  width:20px;
-  height:100%;
+  right:-12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:18px;
+  height:40px;
+  background:white;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   cursor:ew-resize;
-  background:rgba(255,255,255,0.2);
+  user-select:none;
+  font-size:10px;
+  line-height:10px;
+}
+
+#handle span {
+  color:black;
+  font-weight:bold;
+  text-align:center;
 }
 </style>
 </head>
@@ -38,7 +52,10 @@ html, body {
 
 <div id="wrapper">
   <div id="gameContainer"></div>
-  <div id="handle"></div>
+
+  <div id="handle">
+    <span>/\<br>\/</span>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/UnityLoader.js"></script>
@@ -55,24 +72,20 @@ const handle = document.getElementById("handle");
 let scale = 1;
 let dragging = false;
 
-handle.addEventListener("mousedown", () => {
-  dragging = true;
-});
-
-document.addEventListener("mouseup", () => {
-  dragging = false;
-});
+handle.addEventListener("mousedown", () => dragging = true);
+document.addEventListener("mouseup", () => dragging = false);
 
 document.addEventListener("mousemove", (e) => {
   if (!dragging) return;
 
-  // distance from center
   const centerX = window.innerWidth / 2;
   const dist = Math.abs(e.clientX - centerX);
 
-  // scale based on how far you drag
-  scale = dist / 300; // tweak sensitivity
-  scale = Math.max(0.5, Math.min(scale, 3));
+  // unlimited scaling
+  scale = dist / 300;
+
+  // minimum size so it doesn't disappear
+  scale = Math.max(0.2, scale);
 
   wrapper.style.transform = `translate(-50%, -50%) scale(${scale})`;
 });
