@@ -12,25 +12,33 @@ html, body {
   background:black;
 }
 
-#gameContainer {
+/* center wrapper */
+#wrapper {
   position:absolute;
   top:50%;
   left:50%;
-  transform:translate(-50%, -50%) scale(1.6); /* 👈 THIS FIXES SIZE */
+  transform:translate(-50%, -50%) scale(1);
   transform-origin:center;
 }
 
-canvas {
-  display:block;
-  max-width:100vw;
-  max-height:100vh;
+/* slider on right */
+#slider {
+  position:fixed;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%) rotate(270deg);
+  width:200px;
 }
 </style>
 </head>
 
 <body>
 
-<div id="gameContainer"></div>
+<div id="wrapper">
+  <div id="gameContainer"></div>
+</div>
+
+<input id="slider" type="range" min="0.5" max="2.5" step="0.01" value="1">
 
 <script src="https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/UnityLoader.js"></script>
 
@@ -39,6 +47,14 @@ var gameInstance = UnityLoader.instantiate(
   "gameContainer",
   "https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/adofaiii4.json"
 );
+
+// scale control
+const slider = document.getElementById("slider");
+const wrapper = document.getElementById("wrapper");
+
+slider.addEventListener("input", () => {
+  wrapper.style.transform = `translate(-50%, -50%) scale(${slider.value})`;
+});
 </script>
 
 </body>
