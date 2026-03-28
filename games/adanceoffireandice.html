@@ -21,13 +21,15 @@ html, body {
   transform-origin:center;
 }
 
-/* slider on right */
-#slider {
-  position:fixed;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%) rotate(270deg);
-  width:200px;
+/* draggable edge */
+#handle {
+  position:absolute;
+  right:-10px;
+  top:0;
+  width:20px;
+  height:100%;
+  cursor:ew-resize;
+  background:rgba(255,255,255,0.2);
 }
 </style>
 </head>
@@ -36,9 +38,8 @@ html, body {
 
 <div id="wrapper">
   <div id="gameContainer"></div>
+  <div id="handle"></div>
 </div>
-
-<input id="slider" type="range" min="0.5" max="2.5" step="0.01" value="1">
 
 <script src="https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/UnityLoader.js"></script>
 
@@ -48,12 +49,32 @@ var gameInstance = UnityLoader.instantiate(
   "https://cdn.jsdelivr.net/gh/udbsite/adofai@f170efcb1b532312817e69f26ce3f84c99940238/Build/adofaiii4.json"
 );
 
-// scale control
-const slider = document.getElementById("slider");
 const wrapper = document.getElementById("wrapper");
+const handle = document.getElementById("handle");
 
-slider.addEventListener("input", () => {
-  wrapper.style.transform = `translate(-50%, -50%) scale(${slider.value})`;
+let scale = 1;
+let dragging = false;
+
+handle.addEventListener("mousedown", () => {
+  dragging = true;
+});
+
+document.addEventListener("mouseup", () => {
+  dragging = false;
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!dragging) return;
+
+  // distance from center
+  const centerX = window.innerWidth / 2;
+  const dist = Math.abs(e.clientX - centerX);
+
+  // scale based on how far you drag
+  scale = dist / 300; // tweak sensitivity
+  scale = Math.max(0.5, Math.min(scale, 3));
+
+  wrapper.style.transform = `translate(-50%, -50%) scale(${scale})`;
 });
 </script>
 
