@@ -1,5 +1,5 @@
 const games = [
-    { title: "A Dance Of Fire And Ice", url: "games/adanceoffireandice.html", img: "https://via.placeholder.com/200x150?text=A+Dance+Of+Fire+And+Ice" }
+    { title: "A Dance Of Fire And Ice", url: "games/adanceoffireandice.html", img: "https://play-lh.googleusercontent.com/L8rCly8hMWuP95PbihDZlSV2u0oGrs0hl2lEXboO7XHX2XalJZ1rjgOsFYXnEDWbpQ" }
 ];
 
 function renderGames(gamesToRender) {
