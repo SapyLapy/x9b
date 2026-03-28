@@ -3,6 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony Hawk Pro Skater</title>
+<style>
+  html, body {
+    margin:0; padding:0;
+    width:100%; height:100%;
+    background:#000;
+    display:flex; justify-content:center; align-items:center;
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  #gameWrapper {
+    position: relative;
+    width: 480px;   /* default small size */
+    height: 270px;
+    background: #111;
+    display: flex; justify-content:center; align-items:center;
+  }
+
+  #gameContainer {
+    width:100%;
+    height:100%;
+  }
+
+  /* slider */
+  #slider {
+    position: absolute;
+    right:0; top:0;
+    width: 20px;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    cursor: ew-resize;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    user-select:none;
+  }
+
+  #slider div {
+    font-size:12px;
+    line-height:1;
+    font-weight:bold;
+    color:white;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<div id="gameWrapper">
+  <div id="gameContainer"></div>
+  <div id="slider"><div>/\</div><div>\/</div></div>
+</div>
+
+<script>
+window.gameconfig = {
+    name: "Tony Hawk's Pro Skater (USA)",
+    url: "https://cdn.jsdelivr.net/gh/bubbls/ugss@2fc3907ff86a6758296508c4ecafe087a2ccd96e/tony%20hawk%20pro%20skater/Tony%20Hawk's%20Pro%20Skater%20(USA).chd",
+    core: "psx",
+    min: 1,
+    max: 18
+};
+
+// ----- PSX loader -----
+function mergeFiles(fileParts){
+  return new Promise((resolve,reject)=>{
+    let buffers=[],i=0;
+    function fetchPart(){
+      if(i>=fileParts.length){ resolve(URL.createObjectURL(new Blob(buffers))); return; }
+      fetch(fileParts[i]).then(r=>r.arrayBuffer()).then(d=>{buffers.push(d); i++; fetchPart();}).catch(reject);
+    }
+    fetchPart();
+  });
+}
+
+function getParts(file,start,end){
+  let parts=[];
+  for(let i=start;i<=end;i++){
+    let padded = String(i).padStart((end+"").length,'0');
+    parts.push(file+".part"+padded);
+  }
+  return parts;
+}
+
+(async()=>{
+  const parts = getParts(window.gameconfig.url,window.gameconfig.min,window.gameconfig.max);
+  const gameUrl = await mergeFiles(parts);
+
+  window.EJS_player="#gameContainer";
+  window.EJS_core=window.gameconfig.core;
+  window.EJS_gameName=window.gameconfig.name;
+  window.EJS_color="#0064ff";
+  window.EJS_startOnLoaded=true;
+  window.EJS_pathtodata="https://cdn.jsdelivr.net/gh/genizy/emu@master/";
+  window.EJS_gameUrl=gameUrl;
+  window.EJS_biosUrl="https://cdn.jsdelivr.net/gh/Abdess/retroarch_system@5f96368f6dbad5851cdb16a5041fefec4bdcd305/Sony%20-%20PlayStation/scph5501.bin";
+
+  const script=document.createElement("script");
+  script.src="https://cdn.jsdelivr.net/gh/genizy/emu@master/loader.js";
+  document.body.appendChild(script);
+})();
+
+// ----- slider -----
+const slider = document.getElementById("slider");
+const wrapper = document.getElementById("gameWrapper");
+let dragging = false;
+
+slider.addEventListener("mousedown",()=>dragging=true);
+window.addEventListener("mouseup",()=>dragging=false);
+window.addEventListener("mousemove",(e)=>{
+  if(!dragging) return;
+  let newWidth = e.clientX - wrapper.getBoundingClientRect().left;
+  if(newWidth<200) newWidth=200;
+  wrapper.style.width = newWidth+"px";
+  wrapper.style.height = (newWidth*270/480)+"px";
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tony Hawk Pro Skater (USA)</title>
 <style>
   html, body {
