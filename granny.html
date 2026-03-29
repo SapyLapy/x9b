@@ -1,29 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Granny Collection</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #games {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .granny-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      height: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .granny-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .granny-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align:center; margin-bottom: 20px;">Granny Collection</h1>
+
 <div id="games">
 
-  <link rel="stylesheet" href="css/style.css">
-  
   <div class="granny-card" onclick="openGame('granny1.html')">
+    <img src="https://play-lh.googleusercontent.com/WsUsst7uXYvpXzaL1XF7wRDpE1ZvF0XqRRgj0Dvti5VPRnHfFhQLuVKl2p2Zun-oyQ=w526-h296-rw" alt="Granny 1">
     <div class="overlay">Granny 1</div>
   </div>
 
   <div class="granny-card" onclick="openGame('granny2.html')">
+    <img src="https://play-lh.googleusercontent.com/c-hCC3E1QFkWCtSD4n4UolbDfHexUN7F6gdB_liwH_fH-l5S6F0KaOx1fp_Qi82xQVM=w526-h296-rw" alt="Granny 2">
     <div class="overlay">Granny 2</div>
   </div>
 
   <div class="granny-card" onclick="openGame('granny3.html')">
+    <img src="https://i.ytimg.com/vi/J2zIFG-RgJM/maxresdefault.jpg" alt="Granny 3">
     <div class="overlay">Granny 3</div>
   </div>
 
   <div class="granny-card" onclick="openGame('grannycreepy.html')">
+    <img src="https://tr.rbxcdn.com/180DAY-609e2739a3228f30ea6228fd04f74f92/500/280/Image/Jpeg/noFilter" alt="Granny Creepy">
     <div class="overlay">Granny Creepy</div>
   </div>
 
   <div class="granny-card" onclick="openGame('grannynightmare.html')">
+    <img src="https://i.ytimg.com/vi/7CPYmuWxLg8/maxresdefault.jpg" alt="Granny Nightmare">
     <div class="overlay">Granny Nightmare</div>
   </div>
 
   <div class="granny-card" onclick="openGame('grannyonline.html')">
+    <img src="https://www1.minijuegosgratis.com/v3/games/thumbnails/241290_1.jpg" alt="Granny Online">
     <div class="overlay">Granny Online</div>
   </div>
 
 </div>
+
+<script>
+  function openGame(url) {
+    window.location.href = url;
+  }
+</script>
+
+</body>
+</html>
