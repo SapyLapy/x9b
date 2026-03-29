@@ -54,21 +54,25 @@ header {
     font-size: 16px;
 }
 
-.full-width {
-    grid-column: 1 / -1; /* takes entire row */
-}
+.granny-card {
+    grid-column: 1 / -1;
+    height: 300px;
 
-.full-width button {
-    width: 100%;
-    padding: 25px;
-    font-size: 24px;
-    background: #ff9900;
-    color: white;
-    border: none;
+    background: #333; /* use this first to test */
     border-radius: 10px;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+
     cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.full-width button:hover {
-    background: #ff7700;
+.granny-card:hover {
+    transform: scale(1.02);
 }
