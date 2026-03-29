@@ -53,3 +53,22 @@ header {
     padding: 10px;
     font-size: 16px;
 }
+
+.full-width {
+    grid-column: 1 / -1; /* takes entire row */
+}
+
+.full-width button {
+    width: 100%;
+    padding: 25px;
+    font-size: 24px;
+    background: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.full-width button:hover {
+    background: #ff7700;
+}
