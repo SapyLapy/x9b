@@ -2,22 +2,23 @@ const games = [
     { title: "A Dance Of Fire And Ice", url: "games/adanceoffireandice.html", img: "https://play-lh.googleusercontent.com/L8rCly8hMWuP95PbihDZlSV2u0oGrs0hl2lEXboO7XHX2XalJZ1rjgOsFYXnEDWbpQ" }
 ];
 
-const grid = document.getElementById("gamesGrid");
-
-const grannyCard = document.createElement("div");
-grannyCard.className = "granny-card";
-grannyCard.innerText = "Granny Collection";
-
-grannyCard.onclick = () => {
-  window.location.href = "granny.html";
-};
-
-grid.prepend(grannyCard); 
-
 function renderGames(gamesToRender) {
     const grid = document.getElementById('gamesGrid');
     grid.innerHTML = '';
     
+    // 🔥 Add Granny FIRST
+    const grannyCard = document.createElement("div");
+    grannyCard.className = "granny-card";
+    grannyCard.onclick = () => window.location.href = "granny.html";
+
+    grannyCard.innerHTML = `
+        <img src="https://tr.rbxcdn.com/180DAY-609e2739a3228f30ea6228fd04f74f92/500/280/Image/Jpeg/noFilter">
+        <div class="overlay">Granny Collection</div>
+    `;
+
+    grid.appendChild(grannyCard);
+
+    // Then add games
     gamesToRender.forEach(game => {
         const card = document.createElement('div');
         card.className = 'game-card';
