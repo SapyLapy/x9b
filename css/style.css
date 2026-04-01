@@ -24,6 +24,7 @@ header {
     border-radius: 5px;
 }
 
+/* GRID */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -31,6 +32,7 @@ header {
     padding: 20px;
 }
 
+/* NORMAL GAME CARDS */
 .game-card {
     background: #222;
     border-radius: 8px;
@@ -54,25 +56,36 @@ header {
     font-size: 16px;
 }
 
+/* 🔥 GRANNY BANNER */
 .granny-card {
+    position: relative;
     grid-column: 1 / -1;
     height: 300px;
-
-    background: #333; /* use this first to test */
     border-radius: 10px;
-
-    display: flex;
-    align-items: flex-end;
-    padding: 20px;
-
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-
+    overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s;
 }
 
 .granny-card:hover {
     transform: scale(1.02);
+}
+
+.granny-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+/* TEXT ON TOP OF IMAGE */
+.overlay {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
 }
