@@ -9,6 +9,12 @@ const games = [
         title: "Retro Bowl", 
         url: "games/retrobowl.html", 
         img: "https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" 
+    },
+    
+    { 
+        title: "Slice It All!", 
+        url: "games/sliceitall.html", 
+        img: "https://play-lh.googleusercontent.com/npZcw60ibNbcfK8niudMcGA2qyeDOCbE6PRlCL2Ct5SoC5WuRH0DFsGtGkimHyhUmac" 
     }
 ];
 
