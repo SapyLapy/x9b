@@ -8,7 +8,7 @@ const games = [
     { 
         title: "Retro Bowl", 
         url: "games/retrobowl.html", 
-        img: "https://play-lh.googleusercontent.com/0s9pGQn8zX9zQJxK0kz7Yt7lYpZ1kXQ6X8rHn3Wz2v8y5Q" 
+        img: "https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" 
     }
 ];
 
