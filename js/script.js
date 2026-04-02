@@ -1,5 +1,15 @@
 const games = [
-    { title: "A Dance Of Fire And Ice", url: "games/adanceoffireandice.html", img: "https://play-lh.googleusercontent.com/L8rCly8hMWuP95PbihDZlSV2u0oGrs0hl2lEXboO7XHX2XalJZ1rjgOsFYXnEDWbpQ" }
+    { 
+        title: "A Dance Of Fire And Ice", 
+        url: "games/adanceoffireandice.html", 
+        img: "https://play-lh.googleusercontent.com/L8rCly8hMWuP95PbihDZlSV2u0oGrs0hl2lEXboO7XHX2XalJZ1rjgOsFYXnEDWbpQ" 
+    },
+
+    { 
+        title: "Retro Bowl", 
+        url: "games/retrobowl.html", 
+        img: "https://play-lh.googleusercontent.com/0s9pGQn8zX9zQJxK0kz7Yt7lYpZ1kXQ6X8rHn3Wz2v8y5Q" 
+    }
 ];
 
 function renderGames(gamesToRender) {
