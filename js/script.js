@@ -6,7 +6,7 @@ const games = [
     },
 
     { 
-        title: "Kill The Ice Age Baby Adeventre", 
+        title: "Kill The Ice Age Baby Adventure", 
         url: "games/killtheiceagebabyadventure.html", 
         img: "https://pbs.twimg.com/media/ERjtRBYU0AAry2w.jpg" 
     },
