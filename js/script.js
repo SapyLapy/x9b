@@ -12,6 +12,12 @@ const games = [
     },
 
     { 
+        title: "Kim Jong Un Tile Puzzle", 
+        url: "games/kimjonguntilepuzzle.html", 
+        img: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Kim_Jong-un_at_the_Workers%27_Party_of_Korea_main_building.png" 
+    },
+
+    { 
         title: "Retro Bowl", 
         url: "games/retrobowl.html", 
         img: "https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" 
