@@ -6,6 +6,12 @@ const games = [
     },
 
     { 
+        title: "Kill The Ice Age Baby Adeventre", 
+        url: "games/killtheiceagebabyadventure.html", 
+        img: "https://pbs.twimg.com/media/ERjtRBYU0AAry2w.jpg" 
+    },
+
+    { 
         title: "Retro Bowl", 
         url: "games/retrobowl.html", 
         img: "https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" 
