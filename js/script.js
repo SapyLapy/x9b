@@ -6,6 +6,12 @@ const games = [
     },
 
     { 
+        title: "Banana Simulator", 
+        url: "games/bananasimulator.html", 
+        img: "https://m.media-amazon.com/images/I/61o43O+4IAL.png" 
+    },
+
+    { 
         title: "Kill The Ice Age Baby Adventure", 
         url: "games/killtheiceagebabyadventure.html", 
         img: "https://pbs.twimg.com/media/ERjtRBYU0AAry2w.jpg" 
