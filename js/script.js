@@ -17,10 +17,16 @@ const games = [
         img: "https://i1.sndcdn.com/artworks-000358969488-in8emu-t500x500.jpg" 
     },
 
+     { 
+        title: "Baldi's Basics", 
+        url: "games/baldisbasics.html", 
+        img: "https://i1.sndcdn.com/artworks-000358969488-in8emu-t500x500.jpg" 
+    },
+
     { 
-        title: "Banana Simulator", 
-        url: "games/bananasimulator.html", 
-        img: "https://m.media-amazon.com/images/I/61o43O+4IAL.png" 
+        title: "Baseball Bros", 
+        url: "games/baseballbros.html", 
+        img: "https://baseballbrosgame.io//data/image/game/baseball-bros-io-game.jpg" 
     },
 
     { 
