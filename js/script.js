@@ -18,7 +18,7 @@ const games = [
     },
 
      { 
-        title: "Baldi's Basics", 
+        title: "Banana Simulator", 
         url: "games/baldisbasics.html", 
         img: "https://i1.sndcdn.com/artworks-000358969488-in8emu-t500x500.jpg" 
     },
