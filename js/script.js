@@ -17,10 +17,10 @@ const games = [
         img: "https://i1.sndcdn.com/artworks-000358969488-in8emu-t500x500.jpg" 
     },
 
-     { 
+    { 
         title: "Banana Simulator", 
-        url: "games/baldisbasics.html", 
-        img: "https://i1.sndcdn.com/artworks-000358969488-in8emu-t500x500.jpg" 
+        url: "games/bananasimulator.html", 
+        img: "https://m.media-amazon.com/images/I/61o43O+4IAL.png" 
     },
 
     { 
@@ -46,7 +46,7 @@ const games = [
         url: "games/retrobowl.html", 
         img: "https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" 
     },
-    
+
     { 
         title: "Slice It All!", 
         url: "games/sliceitall.html", 
@@ -57,7 +57,7 @@ const games = [
 function renderGames(gamesToRender) {
     const grid = document.getElementById('gamesGrid');
     grid.innerHTML = '';
-    
+
     // 🔥 Add Granny FIRST
     const grannyCard = document.createElement("div");
     grannyCard.className = "granny-card";
