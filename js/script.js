@@ -5,6 +5,12 @@ const games = [
         img: "https://play-lh.googleusercontent.com/L8rCly8hMWuP95PbihDZlSV2u0oGrs0hl2lEXboO7XHX2XalJZ1rjgOsFYXnEDWbpQ" 
     },
 
+     { 
+        title: "Baby Sniper In Vietnam", 
+        url: "games/babysniperinvietnam.html", 
+        img: "https://www.y9freegames.com/wp-content/uploads/thumbs/custom/B/Baby-Sniper-In-Vietnam-150x150.jpg" 
+    },
+
     { 
         title: "Banana Simulator", 
         url: "games/bananasimulator.html", 
