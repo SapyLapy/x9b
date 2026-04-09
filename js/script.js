@@ -51,6 +51,12 @@ const games = [
         title: "Slice It All!", 
         url: "games/sliceitall.html", 
         img: "https://play-lh.googleusercontent.com/npZcw60ibNbcfK8niudMcGA2qyeDOCbE6PRlCL2Ct5SoC5WuRH0DFsGtGkimHyhUmac" 
+    },
+
+    { 
+        title: "Snow Rider", 
+        url: "games/snowrider.html", 
+        img: "https://snow-rider3d.io/cache/data/image/snow-rider-3d-2-m200x200.webp" 
     }
 ];
 
