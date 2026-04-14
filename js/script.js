@@ -1,4 +1,11 @@
 const games = [
+
+    { 
+        title: "5 Nights at Epstiens", 
+        url: "games/fivenightsatepstions.html", 
+        img: "https://slithergame.io/cache/data/image/game/five-nights-at-epsteins-m300x300.jpg" 
+    },
+    
     { 
         title: "A Dance Of Fire And Ice", 
         url: "games/adanceoffireandice.html", 
