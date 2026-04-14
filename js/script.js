@@ -2,7 +2,7 @@ const games = [
 
     { 
         title: "5 Nights at Epstiens", 
-        url: "games/fivenightsatepstions.html", 
+        url: "games/fivenightsatepstiens.html", 
         img: "https://slithergame.io/cache/data/image/game/five-nights-at-epsteins-m300x300.jpg" 
     },
     
