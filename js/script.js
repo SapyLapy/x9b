@@ -53,6 +53,12 @@ const games = [
         url: "games/retrobowl.html", 
         img: "https://pbs.twimg.com/profile_images/1217942835527409665/swRMqEkK_400x400.jpg" 
     },
+    
+    { 
+        title: "Run 3", 
+        url: "games/run3.html", 
+        img: "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/d3c19e9b-9b7b-4a54-9cb5-6188a5bd7d3b/run-3-logo.png" 
+    },
 
     { 
         title: "Slice It All!", 
